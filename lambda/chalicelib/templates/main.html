@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.css">
+    <title>half_card_slide</title>
+    <style type="text/css">
+        * {
+            font-family: "맑은 고딕", "Malgun Gothic", "애플 SD 산돌고딕 Neo", "Apple SD Gothic Neo", sans-serif !important
+        }
+        html {
+            height: 100%;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        main {
+            height: 100%;
+            position: relative;
+        }
+        body * {
+            box-sizing: border-box;
+        }
+        h1, h2, p {
+            margin: 0;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        a {
+            color: #000000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .dim {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height: 100%;
+        }
+        .popup {
+            height: 100%;
+        }
+        .popup.bottom {
+            position: relative;
+        }
+        .popup.bottom .main_modal {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+        .popup.full {
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+        .popup.center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* .popup.center .main_modal{position: absolute;} */
+        .main_modal .br {
+            display: block;
+        }
+        .main_modal.card_slide {
+            height: 100%;
+        }
+        .main_modal.card_slide .content {
+            height: 100%;
+            position: relative;
+            background: linear-gradient(360deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.85) 31.77%, rgba(0, 0, 0, 0) 100%);
+        }
+        .main_modal.card_slide .event_area {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+        .main_modal.card_slide .slider_image_area {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .main_modal.card_slide .slider_image_area .slick-slide {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-left: 20px;
+        }
+        .slider_image_area img {
+            width: 100%;
+            height: 100%;
+        }
+        .slider_image_area p {
+            position: absolute;
+            font-size: 15px;
+            line-height: 20px;
+            color: #fff;
+        }
+        .main_modal.card_slide .slick-slider .slick-list {
+            padding: 0 20px;
+        }
+        /*.main_modal.card_slide .slider_texts {*/
+        /*    padding-bottom: 156px;*/
+        /*}*/
+        .main_modal.card_slide .slider_texts .contentContainer{
+            width: 200px;
+            margin-left: 20px;
+        }
+        .main_modal.card_slide .slider_texts h2 {
+            font-size: 10pt !important;
+            text-align: center;
+            padding: 0 !important;
+            margin-bottom: 0 !important;
+        }
+        .main_modal.card_slide .slider_texts p {
+            font-size: 6pt !important;
+            text-align: center;
+            padding: 0 !important;
+        }
+        .main_modal.card_slide .content h2 {
+            font-size: 28px;
+            line-height: 33px;
+            padding: 0 28px;
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .main_modal.card_slide .content p {
+            font-size: 14px;
+            line-height: 20px;
+            padding: 0 28px;
+            color: #fff;
+        }
+        .main_modal.card_slide .btn_area {
+            padding: 20px 27px 30px;
+            width: 100%;
+        }
+        .main_modal.card_slide .btn_area::after {
+            content: '';
+            display: block;
+            clear: both;
+            float: none;
+        }
+        .main_modal.card_slide .btn_area li {
+            float: left;
+            width: 48%;
+        }
+        .main_modal.card_slide .btn_area li:last-child {
+            margin-left: 2%;
+        }
+        .main_modal.card_slide .btn_area li a {
+            display: block;
+            line-height: 50px;
+            border-radius: 43px;
+            text-align: center;
+            font-size: 15px;
+        }
+        .main_modal.card_slide .btn_area li a.style01 {
+            color: #fff;
+            opacity: 0.6;
+        }
+        .main_modal.card_slide .btn_area li a.style02 {
+            color: #fff;
+        }
+        .main_modal.card_slide .slick-dotted.slick-slider {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <div class="popup full">
+        <div class="main_modal card_slide">
+            <div class="content">
+                <div class="event_area">
+                    <p>Special price</p>
+                    <h2>Don't miss out!</h2>
+                    <div class="slider_image_area">
+                        <div id="slider_Image02">
+                            <!-- 1번 이미지-->
+                            <div>
+                                <a href="javascript:;">
+                                    <img src="">
+                                </a>
+                            </div>
+                            <!-- 2번 이미지-->
+                            <div>
+                                <a href="javascript:;">
+                                    <img src="">
+                                </a>
+                            </div>
+                            <!-- 3번 이미지 -->
+                            <div>
+                                <a href="javascript:;">
+                                    <img src="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider_texts">
+                        <div id="slider_Content03">
+                            <!-- 1번 content -->
+                            <div class="contentContainer">
+                                <div class="s_content">
+                                    <h2></h2>
+                                    <p>
+                                        <span class="br"></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- 2번 content -->
+                            <div class="contentContainer">
+                                <div class="s_content">
+                                    <h2></h2>
+                                    <p>
+                                        <span class="br"></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- 3번 content -->
+                            <div class="contentContainer">
+                                <div class="s_content">
+                                    <h2></h2>
+                                    <p>
+                                        <span class="br"></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="btn_area ea2">
+                        <ul>
+                            <li>
+                                <a class="style01" href="appboy://close">Close</a>
+                            </li>
+                            <li>
+                                <a class="style02" href="javascript:;">Shop now</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-analytics.js"></script>
+<script>
+    var item_img = document.getElementsByTagName('img');
+    var item_name = $('.s_content h2');
+    var item_price = $('.s_content p');
+    var random_number = Math.random();
+    
+    window.onload = async () => {
+        const postResponse = await fetch('https://bfqm05uo9a.execute-api.ap-northeast-2.amazonaws.com/api/topN/test/facebookcatalog',{
+            method:'get',
+        });
+        const posts = await postResponse.json();
+        if (postResponse.status === 200) {
+            for (let i = 0; i<posts.Test.result.length; i++) {
+                console.log(posts);
+                postItem(i, posts.Test.result[i].product_id, posts.Test.result[i].product_info.image_url,
+                    posts.Test.result[i].product_info.name, posts.Test.result[i].product_info.price);
+            }
+        }
+        else {
+            alert("Error");
+        }
+    };
+    
+    const postItem = (num, id, image_url, name, price) => {
+        item_img[num].setAttribute('src',image_url);
+        item_img[num].setAttribute('alt',id);
+        item_name[num].textContent = name;
+        item_price[num].textContent = price;
+        firebase.analytics().logEvent('impression_event', {
+            product_id : id ,
+            product_index : num,
+            page_id : random_number
+        } )
+    };
+    // 딥링크 변경 - 수정해야 할 부분 (시작)
+    var deeplink1 = "brandiapplication://applink/event/9462";
+    var deeplink2 = "brandiapplication://applink/event/9604";
+    var deeplink3 = "brandiapplication://applink/event/9462";
+    // 딥링크 변경 - 수정해야 할 부분 (끝)
+    var currentSlideIndex = undefined;
+    var deeplink = undefined;
+    function generateDeeplink(slideIndex) {
+        let _deeplink = undefined;
+        switch (slideIndex) {
+            case 0:
+                _deeplink = deeplink1;
+                break;
+            case 1:
+                _deeplink = deeplink2;
+                break;
+            case 2:
+                _deeplink = deeplink3;
+                break;
+            default:
+                break;
+        }
+        return _deeplink;
+    }
+    $(function() {
+        $('#slider_Image02').slick({
+            arrows: false,
+            infinite: false,
+            centerPadding: '27px',
+            variableWidth: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: false,
+            speed: 300,
+            touchThreshold: 200,
+            asNavFor: '#slider_Content03',
+        });
+        $('#slider_Content03').slick({
+            arrows: false,
+            infinite: false,
+            centerPadding: '27px',
+            variableWidth: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: false,
+            speed: 200,
+            touchThreshold: 300,
+            asNavFor: '#slider_Image02',
+        });
+    
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyAyvRhsb9cLHUrltMTpwIbL7V-nA0yYAlg",
+            authDomain: "iamstudio-firebase.firebaseapp.com",
+            databaseURL: "https://iamstudio-firebase.firebaseio.com",
+            projectId: "iamstudio-firebase",
+            storageBucket: "iamstudio-firebase.appspot.com",
+            messagingSenderId: "442692024052",
+            appId: "1:442692024052:web:e3e9e3fa1801f1bf3250a1",
+            measurementId: "G-NES53TR2HF"
+    };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        $('img').on('click', function() {
+            var index = $('img').index(this);
+            var id = $(this).attr('alt') ;
+            firebase.analytics().logEvent('click_event', {
+                product_id : id ,
+                product_index:index ,
+                page_id : random_number
+            });
+        });
+        
+    });
+</script>
+</body>
+</html>
+
