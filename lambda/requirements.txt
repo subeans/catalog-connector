@@ -1,0 +1,4 @@
+requests~=2.25.0
+chalice~=1.21.6
+jinja2 
+pymongo
