@@ -1,0 +1,7 @@
+pandas
+google-cloud-bigquery
+google-oauth2-tool
+pymongo
+requests~=2.25.0
+boto3
+botocore==1.19.44
