@@ -1,0 +1,28 @@
+{
+  "resources": [
+    {
+      "name": "default-role",
+      "resource_type": "iam_role",
+      "role_arn": "arn:aws:iam::008747557116:role/catalog-connector-front-dev",
+      "role_name": "catalog-connector-front-dev"
+    },
+    {
+      "name": "api_handler",
+      "resource_type": "lambda_function",
+      "lambda_arn": "arn:aws:lambda:ap-northeast-2:008747557116:function:catalog-connector-front-dev"
+    },
+    {
+      "name": "demo_auth",
+      "resource_type": "lambda_function",
+      "lambda_arn": "arn:aws:lambda:ap-northeast-2:008747557116:function:catalog-connector-front-dev-demo_auth"
+    },
+    {
+      "name": "rest_api",
+      "resource_type": "rest_api",
+      "rest_api_id": "lmkqls30g2",
+      "rest_api_url": "https://lmkqls30g2.execute-api.ap-northeast-2.amazonaws.com/api/"
+    }
+  ],
+  "schema_version": "2.0",
+  "backend": "api"
+}
