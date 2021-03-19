@@ -2,8 +2,8 @@ import boto3
 import json
 
 
-AWS_ACCESS_KEY_ID = 'AKIAQECLFED6JTMTPPIS'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = '-'
+AWS_SECRET_ACCESS_KEY = '='
 
 s3 = boto3.client('s3',
                   aws_access_key_id=AWS_ACCESS_KEY_ID,
