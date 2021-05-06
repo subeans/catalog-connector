@@ -6,8 +6,8 @@ import json
 import pymongo
 
 
-MONGODB_USER = 'digester_prod'
-MONGODB_PASSWORD = 'qmfforvldzm'
+MONGODB_USER = '--'
+MONGODB_PASSWORD = '--'
 MONGODB_URI = 'mongodb://%s:%s@3.34.3.239:27017' % (MONGODB_USER, MONGODB_PASSWORD)
 MONGODB_DATABASE = 'prod'
 
