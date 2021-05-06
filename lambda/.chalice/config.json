@@ -2,11 +2,11 @@
   "version": "2.0",
   "app_name": "catalog-connector-front",
   "environment_variables": {
-    "MONGODB_USER" : "digester_prod",
-    "MONGODB_PASSWORD" : "qmfforvldzm",
-    "ACCESS_KEY_ID": "AKIAQECLFED6PNFX25BG",
-    "SECRET_ACCESS_KEY": "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",
-    "FACEBOOK_TOKEN":"EAAFoU0uCqsYBAAA4y7ZCIZBob76XUCValyJjfy2eGih0tcLCKTkCJqxnuTUeRuvsm8dsCL7WQtuVSzycke94TsOVmWDGIpxjXcp9ohAZAURjOroU5OurZCgjwKmq1usnh5wAkNjlLeo7d1StR8CwGMFZBqNB9WL36pYEX2QZABSUrG5HQMQ3ih"
+    "MONGODB_USER" : "-",
+    "MONGODB_PASSWORD" : "-",
+    "ACCESS_KEY_ID": "-",
+    "SECRET_ACCESS_KEY": "-+oow9aiWlkV8Ok+Md/36OyDSqvpIu3ip",
+    "FACEBOOK_TOKEN":"-"
   },
   "stages": {
     "dev": {
